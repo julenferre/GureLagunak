@@ -4,14 +4,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
+  def create    
   	@user = User.new(user_params)
     if @user.save and @user.password == @user.password_confirmation 
-      # flash[:success] = "Ongi etorri GULAG-era!"
-      render html: "BAI :D"
+      flash[:success] = "Ongi etorri GULAG-era!"
+      redirect_to root_path
+      # render html: "BAI :D"
     else
-      # render 'new'
-      render html: "Ez :("
+      render 'new'
+      # render html: "Ez :("
     end 
   end
 
@@ -21,6 +22,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-    	  params.require(:user).permit(:nickname, :email, :password, :password_confirmation)
+    	  params.require(:user).permit(:nickname, :email, :profile_pic, :password, :password_confirmation)
     end
 end

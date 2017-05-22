@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Irudiak erabiltzeko
-gem "paperclip", "~> 4.1.1" 
+gem "paperclip", "~> 4.2" 
 
 # Weborriko oinean exekuzio-informazioa agertzeko
 gem "rails-footnotes", ">= 3.7.9", :group => :development

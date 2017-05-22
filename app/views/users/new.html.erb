@@ -1,13 +1,13 @@
 <!--HEADER-->
 <table width="100%">
-<tr>
-<td>
-<%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/" %>
-</td>
-<td style="text-align: right">
-<a href="signup">Sign Up</a><br/><a href="login">Log In</a>
-</td>
-</tr>
+	<tr>
+		<td>
+			<%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/" %>
+		</td>
+		<td style="text-align: right">
+			<a href="signup">Sign Up</a><br/><a href="login">Log In</a>
+		</td>
+	</tr>
 </table>
 <!--/HEADER-->
 
@@ -15,18 +15,31 @@
 	<h1>SIGN UP</h1>
 
 	<%= form_for(@user, url: signup_path) do |f| %>
-		<%= f.label :nickname, "Nickname-a" %><br/>
-		<%= f.text_field :nickname %> <br/>
-
-		<%= f.label :email, "E-posta helbidea" %><br/>
-		<%= f.email_field :email %> <br/>
-
-		<%= f.label :password, "Pasahitza" %><br/>
-		<%= f.password_field :password %> <br/>
-
-		<%= f.label :password_confirmation, "Pasahitza errepikatu" %><br/>
-		<%= f.password_field :password_confirmation %> <br/>
-
-		<%= f.submit "Kontua sortu" %>
+	<%= f.label :nickname, "Nickname-a" %><br/>
+	<%= f.text_field :nickname %> <br/>
+	<br/>
+	<%= f.label :email, "E-posta helbidea" %><br/>
+	<%= f.email_field :email %> <br/>
+	<br/>
+	<%= f.label :password, "Pasahitza" %><br/>
+	<%= f.password_field :password %> <br/>
+	<br/>
+	<%= f.label :password_confirmation, "Pasahitza errepikatu" %><br/>
+	<%= f.password_field :password_confirmation %> <br/>
+	<br/>
+	<%= f.label :profile_pic, "Profileko irudia hautatu" %><br/>
+	<%= f.file_field :profile_pic %><br/>	
+	<br/>
+	<%= f.submit "Kontua sortu" %>
 	<% end %>
+
+	<% if @user.flush_errors.any? %>		
+		<h5>Found errors while saving</h5> 
+		<ul>
+			<% @user.flush_errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	
 </center>
