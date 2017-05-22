@@ -35,6 +35,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Irudiak erabiltzeko
+gem "paperclip", "~> 4.1.1" 
+
+# Weborriko oinean exekuzio-informazioa agertzeko
+gem "rails-footnotes", ">= 3.7.9", :group => :development
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
