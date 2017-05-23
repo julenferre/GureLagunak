@@ -1,0 +1,12 @@
+<%= form_for(:session, url: login_path) do |f| %>
+
+<%= f.label :email, "Eposta helibidea" %> <br/>
+<%= f.email_field :email %><br/>
+<br/>
+<%= f.label :password, "Pasahitza" %><br/>
+<%= f.password_field :password %><br/>
+<br/>
+<%= f.submit "Sartu" %>
+<% end %>
+
+<p>Berria zara? <%= link_to "Eman izena orain!", signup_path %></p>
