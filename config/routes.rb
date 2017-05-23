@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  root 'mains#index'
+  root 'images#index'
 
   # Sign Up
   get    '/signup',  to: 'users#new'
@@ -24,8 +24,12 @@ Rails.application.routes.draw do
   get    '/users/:id/destroy', to: 'users#show_destroy'
   patch  '/users/:id/destroy', to: 'users#destroy'
 
+  # Image atala
+  get    '/images/uploadphoto', to: 'images#new'
+  post   '/images/uploadphoto', to: 'images#create'
 
   resources :users
+  resources :images
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
