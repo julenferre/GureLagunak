@@ -1,0 +1,7 @@
+<h1>ERABILTZAILEA EZABATU</h1>
+<p>Erabiltzailea ezabatzen baduzu, argitaratutako argazki, iruzkin eta bozketa guztiak galduko dira BETIKO.</p>
+<p>Ziur zaude zure aukerarekin?</p>
+<%= form_for(@user, :url => { :action => "destroy" }) do |f| %>
+<%= link_to "Ez, atzera bueltatu", current_user %><br/><br/>
+<%= f.submit "Bai, erabiltzailea ezabatu" %>
+<% end %>

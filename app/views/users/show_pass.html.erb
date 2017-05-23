@@ -1,0 +1,11 @@
+<h1>PASAHITZA ALDATU</h1>
+
+<%= form_for(@user, :url => { :action => "update_password" }) do |f| %>
+<%= f.label :password, "Pasahitza berria" %><br/>
+<%= f.password_field :password %> <br/>
+<br/>
+<%= f.label :password_confirmation, "Pasahitza errepikatu" %><br/>
+<%= f.password_field :password_confirmation %> <br/>
+<br/>
+<%= f.submit "Pasahitza aldatu" %>
+<% end %>
