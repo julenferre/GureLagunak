@@ -1,6 +1,27 @@
-<%= image_tag(current_user.profile_pic) %><br/>
-<%= current_user.nickname %><br/>
-Eposta helbidea: <%= current_user.email%><br/>
-<%= link_to "Profileko argazkia aldatu", '/users/'+current_user.id.to_s+'/photo' %><br/>
-<%= link_to "Pasahitza aldatu", '/users/'+current_user.id.to_s+'/pass' %><br/>
-<%= link_to "Erabiltzailea ezabatu", '/users/'+current_user.id.to_s+'/destroy' %><br/>
+<table>
+	<tr>
+		<td>
+			<%= image_tag(current_user.profile_pic) %>
+		</td>
+		<td>
+			<ul>
+				<li>
+					<%= link_to "Profileko argazkia aldatu", '/users/'+current_user.id.to_s+'/photo' %>
+				</li>
+				<li>
+					<%= link_to "Pasahitza aldatu", '/users/'+current_user.id.to_s+'/pass' %>	
+				</li>
+				<li>
+					<%= link_to "Erabiltzailea ezabatu", '/users/'+current_user.id.to_s+'/destroy' %>	
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= current_user.nickname %><br/>
+			Eposta helbidea: <%= current_user.email%>
+		</td>
+		<td></td>
+	</tr>
+</table>

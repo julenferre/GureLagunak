@@ -1,5 +1,5 @@
 <%= form_for(:session, url: login_path) do |f| %>
-
+<%= flash[:danger] %> <br/>
 <%= f.label :email, "Eposta helibidea" %> <br/>
 <%= f.email_field :email %><br/>
 <br/>
