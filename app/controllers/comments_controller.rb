@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 	end
 
 	def index
-		@comm = Comment.find(image: Image.find(params[:id]))
+		
 	end
 
 	def create

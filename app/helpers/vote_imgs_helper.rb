@@ -1,0 +1,2 @@
+module VoteImgsHelper
+end

@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
 	
   def index
     @images = Image.order('created_at desc')
+    
   end
 
   def new
@@ -11,7 +12,9 @@ class ImagesController < ApplicationController
   def show
   	@img = Image.find(params[:id])
     @comm = Comment.new
-    @comments = Comment.where(image: Image.find(params[:id])).order('created_at desc')
+    @comments = Comment.where(image: @img).order('created_at desc')
+    @voteimg = VoteImg.new
+    @total = VoteImgsController.
   end
 
   def create

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524100212) do
+ActiveRecord::Schema.define(version: 20170524170723) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 20170524100212) do
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+  end
+
+  create_table "vote_imgs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "image_id"
+    t.integer  "positive"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_vote_imgs_on_image_id"
+    t.index ["user_id"], name: "index_vote_imgs_on_user_id"
   end
 
 end

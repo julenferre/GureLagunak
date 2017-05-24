@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'vote_imgs/new'
+
   get 'images/new'
 
   get 'sessions/new'
@@ -30,15 +32,27 @@ Rails.application.routes.draw do
   get    '/images/:id',         to: 'images#show'
 
   # Comment atala
-  get    '/comments/:id/new', to: 'comments#new'
-  post   '/comments/:id',     to: 'comments#create'
-  get    '/comments/show',    to: 'comments#show'
+  get    '/comments/:id/new',  to: 'comments#new'
+  post   '/comments/:id',      to: 'comments#create'
+  get    '/comments/show',     to: 'comments#show'
+
+  # VoteImg atala
+  get    '/vote_imgs/:id/new',  to: 'vote_imgs#new'
+  post   '/vote_imgs/:id',      to: 'vote_imgs#create'
+  get    '/vote_imgs/:id/show', to: 'vote_imgs#show'
+
+  # VoteComm atala
+  get    '/vote_comms/:id/new', to: 'vote_comms#new'
+  post   '/vote_comms/:id',     to: 'vote_comms#create'
+  get    '/vote_comms/show',    to: 'vote_comms#show'
 
 
   # Baliabideak
   resources :users
   resources :images
   resources :comments
+  resources :vote_imgs
+  resources :vote_comms
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
