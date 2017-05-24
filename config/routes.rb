@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # Image atala
   get    '/images/uploadphoto', to: 'images#new'
   post   '/images/uploadphoto', to: 'images#create'
+  get    '/images/:id',         to: 'images#show'
 
   resources :users
   resources :images

@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 	
   def index
-    @images = Image.order('created_at')
+    @images = Image.order('created_at desc')
   end
 
   def new
@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
   	@img.user = current_user
     if @img.save 
       flash.now[:success] = "Irudia ondo igo da!"
-      redirect_to root_path
+      redirect_to current_user
       # render html: "BAI :D"
     else
       render 'new'
