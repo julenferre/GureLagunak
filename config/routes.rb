@@ -29,8 +29,16 @@ Rails.application.routes.draw do
   post   '/images/uploadphoto', to: 'images#create'
   get    '/images/:id',         to: 'images#show'
 
+  # Comment atala
+  get    '/comments/:id/new', to: 'comments#new'
+  post   '/comments/:id',     to: 'comments#create'
+  get    '/comments/show',    to: 'comments#show'
+
+
+  # Baliabideak
   resources :users
   resources :images
+  resources :comments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

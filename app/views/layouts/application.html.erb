@@ -24,8 +24,8 @@
           <%= link_to current_user.nickname, current_user %><br/>
           <%= link_to "Log out", logout_path, method: :delete %>
         <% else %>
-          <a href="signup">Sign Up</a><br/>
-          <a href="login">Log In</a>
+          <a href="/signup">Sign Up</a><br/>
+          <a href="/login">Log In</a>
         <% end %>
       </td>
     </tr>

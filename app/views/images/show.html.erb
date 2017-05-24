@@ -1,1 +1,8 @@
 <%= render @img %>
+<br/>
+<% if logged_in? %>
+<%= render '/comments/new' %>
+<% end %>
+<br/>
+<%= flash[:success] %> <br/>
+<%= render @comments %>
