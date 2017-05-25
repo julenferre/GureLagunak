@@ -18,7 +18,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @images = Image.where(user_id: params[:id]).order('created_at desc')
+    for @i in @images = Image.where(user_id: params[:id]).order('created_at desc')
+      @total = VoteImgsController.gettotal(@i.id.to_s)
+    end
   end
 
   def show_photo

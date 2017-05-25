@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   # VoteImg atala
   get    '/vote_imgs/:id/new',  to: 'vote_imgs#new'
   post   '/vote_imgs/:id',      to: 'vote_imgs#create'
-  get    '/vote_imgs/:id/show', to: 'vote_imgs#show'
+  get    '/vote_imgs/show', to: 'vote_imgs#show'
 
   # VoteComm atala
   get    '/vote_comms/:id/new', to: 'vote_comms#new'

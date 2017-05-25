@@ -1,8 +1,9 @@
 class ImagesController < ApplicationController
 	
-  def index
-    @images = Image.order('created_at desc')
-    @total = VoteImgsController.gettotal(params)    
+  def index   
+    for @i in @images = Image.order('created_at desc')
+      @total = VoteImgsController.gettotal(@i.id.to_s)
+    end
   end
 
   def new
@@ -14,7 +15,7 @@ class ImagesController < ApplicationController
     @comm = CommentsController.getnew
     @comments = CommentsController.getcomments(@img)
     @voteimg = VoteImgsController.getnew
-    @total = VoteImgsController.gettotal(params)
+    @total = VoteImgsController.gettotal(params[:id])
   end
 
   def create
