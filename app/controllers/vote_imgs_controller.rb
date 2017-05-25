@@ -5,10 +5,6 @@ class VoteImgsController < ApplicationController
 	end
 
 	def show
-		@total = VoteImg.where(positive: 1, image: Image.find(params[:id])).count - VoteImg.where(positive: 0).count
-	end
-
-	def self.kaka(total)
 		
 	end
 
@@ -24,6 +20,14 @@ class VoteImgsController < ApplicationController
 		  	render 'new'
 		    # render html: "Ez :("
 		end
+	end
+
+    def self.getnew
+      VoteImg.new
+    end
+
+	def self.gettotal(params)
+		@total = VoteImg.where(positive: 1, image: Image.find(params[:id])).count - VoteImg.where(positive: 0, image: Image.find(params[:id])).count
 	end
 
 	private

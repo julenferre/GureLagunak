@@ -2,7 +2,7 @@ class ImagesController < ApplicationController
 	
   def index
     @images = Image.order('created_at desc')
-    
+    @total = VoteImgsController.gettotal(params)    
   end
 
   def new
@@ -11,10 +11,10 @@ class ImagesController < ApplicationController
 
   def show
   	@img = Image.find(params[:id])
-    @comm = Comment.new
-    @comments = Comment.where(image: @img).order('created_at desc')
-    @voteimg = VoteImg.new
-    @total = VoteImgsController.
+    @comm = CommentsController.getnew
+    @comments = CommentsController.getcomments(@img)
+    @voteimg = VoteImgsController.getnew
+    @total = VoteImgsController.gettotal(params)
   end
 
   def create
@@ -29,6 +29,7 @@ class ImagesController < ApplicationController
       # render html: "Ez :("
     end 
   end
+
 
   private
   def image_params

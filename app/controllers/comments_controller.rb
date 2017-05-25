@@ -22,6 +22,14 @@ class CommentsController < ApplicationController
 	    end
 	end
 
+	def self.getnew
+		Comment.new
+	end
+
+	def self.getcomments(image)
+		Comment.where(image: image).order('created_at desc')
+	end
+
 	private
 	def comm_params
 	  params.require(:comment).permit(:text)
