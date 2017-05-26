@@ -3,6 +3,6 @@ Noiz: <%= comment.created_at %><br/>
 Testua: <%= comment.text %><br/>
 Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts
 <% if logged_in? %>
-<%= render '/vote_comms/new'  %>
+<%= render '/vote_comms/new', comment: @comment %>
 <% end %><br/>
 -------------------<br/>

@@ -10,7 +10,7 @@ class ImagesController < ApplicationController
 
   def show
   	@img = Image.find(params[:id])
-    @comm = CommentsController.getnew
+    @comment = CommentsController.getnew
     @comments = CommentsController.getcomments(@img)
     @voteimg = VoteImgsController.getnew
     @votecomm = VoteCommsController.getnew

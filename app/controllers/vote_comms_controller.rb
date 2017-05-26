@@ -1,7 +1,7 @@
 class VoteCommsController < ApplicationController
 
 	def new
-		@votecomm = VoteComm.new(comment_id: id)
+		@votecomm = VoteComm.new
 	end
 
 	def index
@@ -11,12 +11,12 @@ class VoteCommsController < ApplicationController
 	def create
 		@votecomm = VoteComm.new(votecomm_params)
 
-		if VoteComm.where(user: current_user, comment: Comment.find(params[:id])).count > 0
-			VoteComm.where(user: current_user, comment: Comment.find(params[:id])).destroy_all
+		if VoteComm.where(user: current_user, comment: Comment.find(params[:comment_id])).count > 0
+			VoteComm.where(user: current_user, comment: Comment.find(params[:comment_id])).destroy_all
 		end
 
 		@votecomm.user = current_user
-		@votecomm.comment = Comment.find(params[:id])
+		@votecomm.comment = Comment.find(params[:comment_id])
 
 		if @votecomm.save 
 			flash[:success] = "Iruzkina ondo bozkatu da!"
