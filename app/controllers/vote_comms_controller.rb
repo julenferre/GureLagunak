@@ -19,7 +19,7 @@ class VoteCommsController < ApplicationController
 		@votecomm.comment = Comment.find(params[:id])
 
 		if @votecomm.save 
-			flash[:success] = "Bozketa ondo egin da!"
+			flash[:success] = "Iruzkina ondo bozkatu da!"
 			redirect_to image_path
 	        # render html: "BAI :D"
 	    else

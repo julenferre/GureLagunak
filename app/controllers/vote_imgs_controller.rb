@@ -19,7 +19,7 @@ class VoteImgsController < ApplicationController
 		@voteimg.image = Image.find(params[:id])
  
 		if @voteimg.save 
-			flash[:success] = "Bozketa ondo egin da!"
+			flash[:success] = "Irudia ondo bozkatu da!"
 			redirect_to image_path
 	        # render html: "BAI :D"
 		else
