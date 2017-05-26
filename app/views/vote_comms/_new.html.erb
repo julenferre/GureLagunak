@@ -1,0 +1,12 @@
+<%= form_for(@votecomm, url: vote_comm_path) do |f| %>
+	
+	<%= f.hidden_field :positive, :value => 1 %>
+	<%= f.submit "UP" %>
+	
+<% end %>
+<%= form_for(@votecomm, url: vote_comm_path) do |f| %>
+	
+	<%= f.hidden_field :positive, :value => 0 %>
+	<%= f.submit "DOWN" %>
+	
+<% end %>

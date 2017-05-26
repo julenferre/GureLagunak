@@ -1,4 +1,8 @@
 Nork: <%= comment.user.nickname %><br/>
 Noiz: <%= comment.created_at %><br/>
 Testua: <%= comment.text %><br/>
+Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts
+<% if logged_in? %>
+<%= render '/vote_comms/new'  %>
+<% end %><br/>
 -------------------<br/>

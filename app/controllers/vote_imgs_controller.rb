@@ -5,7 +5,7 @@ class VoteImgsController < ApplicationController
 	end
 
 	def index
-		@total = VoteImg.where(positive: 1, image: Image.find(params[:id])).count - VoteImg.where(positive: 0, image: Image.find(params[:id])).count
+		
 	end
 
 	def create
@@ -33,7 +33,7 @@ class VoteImgsController < ApplicationController
     end
 
 	def self.gettotal(id)
-		@total = VoteImg.where(positive: 1, image: Image.find(id)).count - VoteImg.where(positive: 0, image: Image.find(id)).count
+		VoteImg.where(positive: 1, image: Image.find(id)).count - VoteImg.where(positive: 0, image: Image.find(id)).count
 	end
 
 	private
