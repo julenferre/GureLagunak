@@ -1,33 +1,37 @@
 <table>
 	<tr>
 		<td>
-			<%= image_tag(current_user.profile_pic) %>
+			<%= image_tag(@user.profile_pic) %>
 		</td>
+		<% if (logged_in?) && (@user.id == current_user.id) %>
 		<td>
 			<ul>
 				<li>
-					<%= link_to "Profileko argazkia aldatu", '/users/'+current_user.id.to_s+'/photo' %>
+					<%= link_to "Profileko argazkia aldatu", '/users/'+@user.id.to_s+'/photo' %>
 				</li>
 				<li>
-					<%= link_to "Pasahitza aldatu", '/users/'+current_user.id.to_s+'/pass' %>	
+					<%= link_to "Pasahitza aldatu", '/users/'+@user.id.to_s+'/pass' %>	
 				</li>
 				<li>
-					<%= link_to "Erabiltzailea ezabatu", '/users/'+current_user.id.to_s+'/destroy' %>	
+					<%= link_to "Erabiltzailea ezabatu", '/users/'+@user.id.to_s+'/destroy' %>	
 				</li>
 			</ul>
 		</td>
+		<% end %>
 	</tr>
 	<tr>
 		<td>
 			<center>
-			<%= current_user.nickname %><br/>
-			<%= current_user.email%>
+			<%= @user.nickname %><br/>
+			<%= @user.email%>
 			</center>
 		</td>
 		<td></td>
 	</tr>
 </table>
 <br/>
+<% if logged_in? && @user.id == current_user.id %>
 <%= link_to "Irudi berria igo", '/images/uploadphoto' %>
 <br/>
+<% end %>
 <%= render @images %>

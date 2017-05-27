@@ -1,4 +1,4 @@
-Nork: <%= comment.user.nickname %><br/>
+Nork: <%= link_to comment.user.nickname, '/users/'+comment.user.id.to_s %><br/><br/>
 Noiz: <%= comment.created_at %><br/>
 Testua: <%= comment.text %><br/>
 Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts
