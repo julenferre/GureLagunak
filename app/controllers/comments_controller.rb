@@ -22,6 +22,13 @@ class CommentsController < ApplicationController
 	    end
 	end
 
+	def destroy
+		@image_id = Comment.find(params[:id]).image.id.to_s
+    	Comment.find(params[:id]).destroy
+    	flash[:success] = "Iruzkina ondo ezabatu da."
+    	redirect_to '/images/'+@image_id   	
+  	end
+
 	def self.getnew
 		Comment.new
 	end

@@ -66,7 +66,6 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "Erabiltzailea ondo ezabatu da."
     redirect_to root_url
-
   end
 
   private

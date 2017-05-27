@@ -29,6 +29,11 @@ class ImagesController < ApplicationController
     end 
   end
 
+  def destroy
+    Image.find(params[:id]).destroy
+    flash[:success] = "Irudia ondo ezabatu da."
+    redirect_to '/users/'+current_user.id.to_s
+  end
 
   private
   def image_params

@@ -25,11 +25,13 @@ Rails.application.routes.draw do
   get    '/images/uploadphoto', to: 'images#new'
   post   '/images/uploadphoto', to: 'images#create'
   get    '/images/:id',         to: 'images#show'
+  get    '/images/:id/destroy', to: 'images#destroy'
 
   # Comment atala
-  get    '/comments/new',   to: 'comments#new'
-  post   '/comments/:id',   to: 'comments#create'
-  get    '/comments/show',  to: 'comments#show'
+  get    '/comments/new',         to: 'comments#new'
+  post   '/comments/:id',         to: 'comments#create'
+  get    '/comments/show',        to: 'comments#show'
+  get    '/comments/:id/destroy', to: 'comments#destroy'
 
   # VoteImg atala
   get    '/vote_imgs/new',     to: 'vote_imgs#new'
