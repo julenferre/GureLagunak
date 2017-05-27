@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-	has_many :images, dependent: :destroy
-	has_many :comments, dependent: :destroy
-	has_many :vote_imgs, dependent: :destroy
-	has_many :vote_comms, dependent: :destroy
+	has_many :images, dependent: :delete_all
+	has_many :comments, dependent: :delete_all
+	has_many :vote_imgs, dependent: :delete_all
+	has_many :vote_comms, dependent: :delete_all
 
 	
 	# Nickname bakarra egon behar da
