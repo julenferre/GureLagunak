@@ -3,7 +3,7 @@
 		<td>
 			<%= image_tag(@user.profile_pic) %>
 		</td>
-		<% if (logged_in?) && (@user.id == current_user.id) %>
+		<% if (logged_in?) && (@user.id == current_user.id || current_user.admin == 1) %>
 		<td>
 			<ul>
 				<li>
@@ -30,7 +30,7 @@
 	</tr>
 </table>
 <br/>
-<% if logged_in? && @user.id == current_user.id %>
+<% if logged_in? && (@user.id == current_user.id || current_user.admin == 1) %>
 <%= link_to "Irudi berria igo", '/images/uploadphoto' %>
 <br/>
 <% end %>

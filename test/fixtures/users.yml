@@ -4,8 +4,10 @@ one:
   nickname: MyString
   email: MyString
   password_digest: MyString
+  admin: 1
 
 two:
   nickname: MyString
   email: MyString
   password_digest: MyString
+  admin: 1

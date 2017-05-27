@@ -4,7 +4,7 @@ Testua: <%= comment.text %><br/>
 Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts
 <% if logged_in? %>
 <%= render '/vote_comms/new', comment: @comment %>
-<% if (comment.user.id == current_user.id) %>
+<% if (comment.user.id == current_user.id || current_user.admin == 1) %>
 <%= link_to "Iruzkina ezabatu", '/comments/'+comment.id.to_s+'/destroy' %><br/>
 <% end %>
 <% end %><br/>

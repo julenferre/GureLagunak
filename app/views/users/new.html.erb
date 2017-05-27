@@ -19,6 +19,8 @@
 	<%= f.label :profile_pic, "Profileko irudia hautatu" %><br/>
 	<%= f.file_field :profile_pic %><br/>	
 	<br/>
+	<%= f.hidden_field :admin, :value => 0 %>
+
 	<%= f.submit "Kontua sortu" %>
 <% end %>
 

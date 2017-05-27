@@ -1,9 +1,10 @@
 class User < ApplicationRecord
-	has_many :images
-	has_many :comments
-	has_many :vote_imgs
-	has_many :vote_comms
+	has_many :images, dependent: :destroy
+	has_many :comments, dependent: :destroy
+	has_many :vote_imgs, dependent: :destroy
+	has_many :vote_comms, dependent: :destroy
 
+	
 	# Nickname bakarra egon behar da
 	validates_uniqueness_of :nickname
 
@@ -16,8 +17,8 @@ class User < ApplicationRecord
 	# REGEX: eposta
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email, presence: true, length: { maximum: 255 },
-	                format: { with: VALID_EMAIL_REGEX },
-	                uniqueness: { case_sensitive: false }
+	format: { with: VALID_EMAIL_REGEX },
+	uniqueness: { case_sensitive: false }
 
 	# Pasahitza babestua
 	has_secure_password
@@ -33,7 +34,7 @@ class User < ApplicationRecord
 
 	# Soilik irudiak hartzeko (eta ez beste motako artxiborik)
 	validates_attachment :profile_pic,
-                     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+	content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
     # Igotzerakoan, irudi guztiek formatu berdina euki ditzaten
     has_attached_file :image, styles: { thumb: ["64x64#", :jpg] }
