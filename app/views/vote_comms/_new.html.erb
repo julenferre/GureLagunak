@@ -1,14 +1,14 @@
 <%= form_for(@votecomm, url: vote_comm_path) do |f| %>
 	
 	<%= f.hidden_field :positive, :value => 1 %>
-	<%= f.hidden_field :comment_id, :value => @comment.id %>
+	<%= f.hidden_field :comment_id, :value => @comment_id %>
 	<%= f.submit "UP" %>
 	
 <% end %>
 <%= form_for(@votecomm, url: vote_comm_path) do |f| %>
 	
 	<%= f.hidden_field :positive, :value => 0 %>
-	<%= f.hidden_field :comment_id, :value => @comment.id %>
+	<%= f.hidden_field :comment_id, :value => @comment_id %>
 	<%= f.submit "DOWN" %>
 	
 <% end %>

@@ -1,9 +1,10 @@
 Nork: <%= link_to comment.user.nickname, '/users/'+comment.user.id.to_s %><br/><br/>
 Noiz: <%= comment.created_at %><br/>
 Testua: <%= comment.text %><br/>
-Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts
+Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts<br/>
 <% if logged_in? %>
-<%= render '/vote_comms/new', comment: @comment %>
+<% @comment_id = comment.id %>
+<%= render '/vote_comms/new' %>
 <% if (comment.user.id == current_user.id || current_user.admin == 1) %>
 <%= link_to "Iruzkina ezabatu", '/comments/'+comment.id.to_s+'/destroy' %><br/>
 <% end %>
