@@ -16,15 +16,15 @@
     <table width="100%">
     <tr>
       <td>
-        <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/" %>
+        <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/", :class => "img-thumbnail img-responsive" %>
       </td>
       <td style="text-align: right">
         <% if logged_in? %>
-          <%= link_to image_tag(current_user.profile_pic, :width => 50, :height => 50), current_user %>
-          <%= link_to current_user.nickname, current_user %><br/>
-          <%= link_to "Log out", logout_path, method: :delete %>
+          <%= link_to image_tag(current_user.profile_pic, :width => 30, :height => 30), current_user %>
+          <%= link_to current_user.nickname, current_user, :class =>'btn btn-default' %>
+          <%= link_to "Log out", logout_path, :class => 'btn btn-danger', method: :delete %>
         <% else %>
-          <a class="btn btn-info" href="/signup">Sign Up</a><br/>
+          <a class="btn btn-info" href="/signup">Sign Up</a>
           <a class="btn btn-info" href="/login">Log In</a>
         <% end %>
       </td>

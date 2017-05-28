@@ -1,8 +1,18 @@
-<h4><%= link_to image.title, '/images/'+image.id.to_s %></h4>
-<%= link_to image_tag(image.img.url), '/images/'+image.id.to_s %><br/>
-<%= link_to image.user.nickname, '/users/'+image.user.id.to_s %><br/>
+<div class="row">
+    <div class="col-xs-12">
+        <h4><%= link_to image.title, '/images/'+image.id.to_s %></h4>
+    </div>
+    <div class="col-xs-offset-3 col-xs-6">
+        <%= link_to image_tag(image.img.url, style: 'max-height:500;width:100%'), '/images/'+image.id.to_s %>
+    </div>
+    <div class="col-xs-12">
+        Nork idatzita: <%= link_to image.user.nickname, '/users/'+image.user.id.to_s %>
+    </div>
+</div>
+
 <%= VoteImgsController.gettotal(image.id) %> pts<br/>
 <% if (logged_in?) && (image.user.id == current_user.id || current_user.admin == 1) %>
 <%= link_to "Irudia ezabatu", '/images/'+image.id.to_s+'/destroy' %><br/>
 <% end %>
 ---------------------------------------------------------------------
+3 
