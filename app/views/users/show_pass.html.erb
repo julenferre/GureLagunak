@@ -1,11 +1,22 @@
 <h1>PASAHITZA ALDATU</h1>
 
-<%= form_for(@user, :url => { :action => "update_password" }) do |f| %>
-<%= f.label :password, "Pasahitza berria" %><br/>
-<%= f.password_field :password %> <br/>
-<br/>
-<%= f.label :password_confirmation, "Pasahitza errepikatu" %><br/>
-<%= f.password_field :password_confirmation %> <br/>
-<br/>
-<%= f.submit "Pasahitza aldatu" %>
+<%= form_for(@user, :html => {:class => 'form-horizontal'}, :url => { :action => "update_password" }) do |f| %>
+    <div class="form-group">
+        <%= f.label :password, "Pasahitza", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.password_field :password, class: 'form-control' %> 
+        </div>
+    </div>
+	
+	<div class="form-group">
+        <%= f.label :password_confirmation, "Pasahitza errepikatu", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.password_field :password_confirmation, class: 'form-control' %> 
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <%= f.submit "Pasahitza aldatu", class: 'btn btn-default' %>
+        </div>
+      </div>
 <% end %>

@@ -20,12 +20,12 @@
       </td>
       <td style="text-align: right">
         <% if logged_in? %>
-          <%= link_to image_tag(current_user.profile_pic), current_user %>
+          <%= link_to image_tag(current_user.profile_pic, :width => 50, :height => 50), current_user %>
           <%= link_to current_user.nickname, current_user %><br/>
           <%= link_to "Log out", logout_path, method: :delete %>
         <% else %>
-          <a href="/signup">Sign Up</a><br/>
-          <a href="/login">Log In</a>
+          <a class="btn btn-info" href="/signup">Sign Up</a><br/>
+          <a class="btn btn-info" href="/login">Log In</a>
         <% end %>
       </td>
     </tr>

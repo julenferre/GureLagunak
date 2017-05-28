@@ -1,8 +1,15 @@
 <h1>PROFILEKO IRUDIA ALDATU</h1>
 
 <%= form_for(@user, :url => { :action => "update_photo" }) do |f| %>
-<%= f.label :profile_pic, "Profileko irudi berria hautatu" %><br/>
-<%= f.file_field :profile_pic %><br/>	
-<br/>
-<%= f.submit "Argazkia aldatu" %>
+	<div class="form-group">
+        <%= f.label :profile_pic, "Profileko irudi berria hautatu", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.file_field :profile_pic %> 
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <%= f.submit "Argazkia aldatu", class: 'btn btn-default' %>
+        </div>
+      </div>
 <% end %>

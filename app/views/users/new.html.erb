@@ -1,26 +1,47 @@
 <h1>SIGN UP</h1>
 
-<%= bootstrap_form_for(@user, url: signup_path) do |f| %>
+<%= form_for(@user, :html => {:class => 'form-horizontal'}, url: signup_path) do |f| %>
 
 	<%= render 'shared/error_messages', object: @user %>
-
-	<%= f.label :nickname, "Nickname-a" %><br/>
-	<%= f.text_field :nickname %> <br/>
-	<br/>
-	<%= f.label :email, "E-posta helbidea" %><br/>
-	<%= f.email_field :email %> <br/>
-	<br/>
-	<%= f.label :password, "Pasahitza" %><br/>
-	<%= f.password_field :password %> <br/>
-	<br/>
-	<%= f.label :password_confirmation, "Pasahitza errepikatu" %><br/>
-	<%= f.password_field :password_confirmation %> <br/>
-	<br/>
-	<%= f.label :profile_pic, "Profileko irudia hautatu" %><br/>
-	<%= f.file_field :profile_pic %><br/>	
-	<br/>
+    <div class="form-group"> 
+        <%= f.label :nickname, "Nickname-a", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.text_field :nickname, class: 'form-control' %>
+        </div>
+    </div>
+	<div class="form-group">
+        <%= f.label :email, "Eposta helbidea", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.email_field :email, class: 'form-control' %> 
+        </div>
+    </div>
+	
+	<div class="form-group">
+        <%= f.label :password, "Pasahitza", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.password_field :password, class: 'form-control' %> 
+        </div>
+    </div>
+	
+	<div class="form-group">
+        <%= f.label :password_confirmation, "Pasahitza errepikatu", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.password_field :password_confirmation, class: 'form-control' %> 
+        </div>
+    </div>
+	
+	<div class="form-group">
+        <%= f.label :profile_pic, "Profileko irudia hautatu", class: 'col-sm-offset-3 col-sm-2 control-label' %>
+        <div class="col-sm-3">
+            <%= f.file_field :profile_pic %>	
+        </div>
+    </div>
+	
 	<%= f.hidden_field :admin, :value => 0 %>
 
-	<%= f.submit "Kontua sortu" %>
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <%= f.submit "Kontua sortu", class: 'btn btn-default' %>
+        </div>
+      </div>
 <% end %>
-
