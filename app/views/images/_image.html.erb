@@ -4,7 +4,7 @@
         <h4><%= link_to image.title, '/images/'+image.id.to_s, style: 'font-size: 16pt; font-weight: bold'  %></h4>
     </div>
     <div class="col-xs-12">
-        <%= link_to image_tag(image.img.url, style: 'max-height:500;width:auto;'), '/images/'+image.id.to_s %>
+        <%= link_to image_tag(image.img.url, style: 'max-height:600;max-width:100%;'), '/images/'+image.id.to_s %>
     </div>
     <div class="col-xs-offset-2 col-xs-8">
         <%= VoteImgsController.gettotal(image.id) %> pts

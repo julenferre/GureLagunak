@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GureLagunak</title>
     <%= csrf_meta_tags %>
 
@@ -11,42 +14,42 @@
   </head>
 
   <body>
-    <center>
-    <!--HEADER-->
-    <table width="98%" style="margin: 2%;">
-    <tr>
-      <td>
-        <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/", :class => "img-responsive" %>
-      </td>
-      <td style="text-align: right">
-        <% if logged_in? %>
-          <% if current_user.profile_pic?%>          
-            <%= link_to image_tag(current_user.profile_pic, :width => 40, :height => 40, :class => 'borobildu'), current_user %>
-          <% else %>
-            <%= link_to image_tag("nouser.gif", :width => 40, :height => 40, :class => 'borobildu'), current_user %>
-          <% end %>
-          <%= link_to current_user.nickname, current_user, :class =>'btn btn-default' %>
-          <%= link_to "Log out", logout_path, :class => 'btn btn-danger', method: :delete %>
-        <% else %>
-          <a class="btn btn-info" href="/signup">Sign Up</a>
-          <a class="btn btn-info" href="/login">Log In</a>
-        <% end %>
-        &nbsp;
-      </td>
-    </tr>
-    </table>
-    <span class="col-xs-12"><hr/></span>
-    <!--/HEADER-->    
-    <%= yield %>    
-    <!--FOOTER-->
-    <span class="col-xs-12"><hr/></span>
-    <br/>
-    <footer>
-    <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak", :style => "height: 40px"), "/" %>
-     - J. Diez & J. Ferrero - 2017 -
-    <%= link_to image_tag("RubyonRails-logo.png"), "http://rubyonrails.org" %>
-    </footer>
-    <!--/FOOTER-->
-    </center>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-7">
+                <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak", :width => "100%"), "/", :class => "img-responsive" %>
+            </div>
+            <div class="col-xs-3 text-right pull-right">
+              <% if logged_in? %>
+                  <% if current_user.profile_pic?%>          
+                    <%= link_to image_tag(current_user.profile_pic, :width => 40, :height => 40, :class => 'borobildu'), current_user %>
+                  <% else %>
+                    <%= link_to image_tag("nouser.gif", :width => 40, :height => 40, :class => 'borobildu'), current_user %>
+                  <% end %>
+                  <%= link_to current_user.nickname, current_user, :class =>'btn btn-default' %>
+                  <%= link_to "Log out", logout_path, :class => 'btn btn-danger', method: :delete %>
+                <% else %>
+                  <a class="btn btn-info" href="/signup">Sign Up</a>
+                  <a class="btn btn-info" href="/login">Log In</a>
+                <% end %>
+                &nbsp;  
+            </div>
+        </div>
+        <center>
+        <!--HEADER-->
+        <span class="col-xs-12"><hr/></span>
+        <!--/HEADER-->    
+        <%= yield %>    
+        <!--FOOTER-->
+        <span class="col-xs-12"><hr/></span>
+        <br/>
+        <footer class="footer">
+            <div class="col-xs-offset-4 col-xs-4 pull-center">
+                <span class="text-muted">- J. Diez & J. Ferrero - 2017 © -</span>
+            </div>
+        </footer>
+        <!--/FOOTER-->
+        </center>
+    </div>
   </body>
 </html>
