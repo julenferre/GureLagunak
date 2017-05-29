@@ -1,9 +1,17 @@
 <table>
 	<tr>
-		<td>
+		<td rowspan="2">
 			<%= image_tag(@user.profile_pic) %>
 		</td>
-		<% if (logged_in?) && (@user.id == current_user.id || current_user.admin == 1) %>
+		<td>
+			<center>
+			<span style="font-size: 20pt"><%= @user.nickname %></span><br/>
+			<span style="font-style: italic"><%=link_to @user.email, "mailto:"+@user.email %></span>
+			</center>
+		</td>
+	</tr>
+	<tr>	
+	<% if (logged_in?) && (@user.id == current_user.id || current_user.admin == 1) %>		
 		<td>
 			<ul>
 				<li>
@@ -16,17 +24,9 @@
 					<%= link_to "Erabiltzailea ezabatu", '/users/'+@user.id.to_s+'/destroy' %>	
 				</li>
 			</ul>
-		</td>
-		<% end %>
-	</tr>
-	<tr>
-		<td>
-			<center>
-			<%= @user.nickname %><br/>
-			<%= @user.email%>
-			</center>
-		</td>
-		<td></td>
+		</td>		
+	
+	<% end %>	
 	</tr>
 </table>
 <br/>

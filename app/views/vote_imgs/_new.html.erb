@@ -1,12 +1,18 @@
-<%= form_for(@voteimg, url: vote_img_path) do |f| %>
-	
-	<%= f.hidden_field :positive, :value => 1 %>
-	<%= f.submit "UP" %>
-	
-<% end %>
-<%= form_for(@voteimg, url: vote_img_path) do |f| %>
-	
-	<%= f.hidden_field :positive, :value => 0 %>
-	<%= f.submit "DOWN" %>
-	
-<% end %>
+<table>
+	<tr>
+		<td>
+			<%= form_for(@voteimg, url: vote_img_path) do |f| %>
+				<%= f.hidden_field :positive, :value => 1 %>
+				<%= image_submit_tag("upvote.png", style: "height: 30px") %>
+			<% end %>
+		</td>
+		<td>&nbsp;</td>
+		<td>
+			<%= form_for(@voteimg, url: vote_img_path) do |f| %>			
+				<%= f.hidden_field :positive, :value => 0 %>
+				<%= image_submit_tag("downvote.png", style: "height: 30px") %>
+			<% end %>
+		</td>
+	</tr>
+</table>
+

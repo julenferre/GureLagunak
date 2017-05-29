@@ -13,25 +13,36 @@
   <body>
     <center>
     <!--HEADER-->
-    <table width="100%">
+    <table width="98%" style="margin: 2%;">
     <tr>
       <td>
-        <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/", :class => "img-thumbnail img-responsive" %>
+        <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak"), "/", :class => "img-responsive" %>
       </td>
       <td style="text-align: right">
         <% if logged_in? %>
-          <%= link_to image_tag(current_user.profile_pic, :width => 30, :height => 30), current_user %>
+          <%= link_to image_tag(current_user.profile_pic, :width => 40, :height => 40), current_user %>
           <%= link_to current_user.nickname, current_user, :class =>'btn btn-default' %>
           <%= link_to "Log out", logout_path, :class => 'btn btn-danger', method: :delete %>
         <% else %>
           <a class="btn btn-info" href="/signup">Sign Up</a>
           <a class="btn btn-info" href="/login">Log In</a>
         <% end %>
+        &nbsp;
       </td>
     </tr>
     </table>
-    <!--/HEADER-->
-    <%= yield %>
+    <span class="col-xs-12"><hr/></span>
+    <!--/HEADER-->    
+    <%= yield %>    
+    <!--FOOTER-->
+    <span class="col-xs-12"><hr/></span>
+    <br/>
+    <footer>
+    <%=link_to image_tag("gl-header.png", :alt => "Gure Lagunak", :style => "height: 40px"), "/" %>
+     - J. Diez & J. Ferrero - 2017 -
+    <%= link_to image_tag("RubyonRails-logo.png"), "http://rubyonrails.org" %>
+    </footer>
+    <!--/FOOTER-->
     </center>
   </body>
 </html>

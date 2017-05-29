@@ -6755,3 +6755,22 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/*----------------------------------------------------*/
+/*----------------- KLASE PROPIOAK -------------------*/
+/*----------------------------------------------------*/
+
+.irudia {
+  border: 1px solid transparent;
+  margin: 10px;
+  font-size: 14pt;
+}
+
+.iruzkina {
+  text-align: left;
+  border: 1px solid #AAAAAA;
+  margin: 10px;
+  padding: 10px;
+  font-size: 14pt;
+  border-radius: 25px;
+}

@@ -1,12 +1,13 @@
-Nork: <%= link_to comment.user.nickname, '/users/'+comment.user.id.to_s %><br/><br/>
-Noiz: <%= comment.created_at %><br/>
-Testua: <%= comment.text %><br/>
-Bozketak: <%= VoteCommsController.gettotal(comment.id) %> pts<br/>
+<div class="col-xs-offset-2 col-xs-8 iruzkina">
+<%= link_to comment.user.nickname, '/users/'+comment.user.id.to_s %>
+ - <%= VoteCommsController.gettotal(comment.id) %> pts
+ - <span style="font-size: 10pt"><%= comment.created_at %></span>
+ <% if logged_in? && (comment.user.id == current_user.id || current_user.admin == 1) %>
+ - <%= link_to image_tag("trash-can-symbol-icon-504.png", style: 'height:3%;width:3%'), '/comments/'+comment.id.to_s+'/destroy' %>
+<% end %>
+<p style="font-size: 16pt; text-align: left"><%= comment.text %></p>
 <% if logged_in? %>
 <% @comment_id = comment.id %>
 <%= render '/vote_comms/new' %>
-<% if (comment.user.id == current_user.id || current_user.admin == 1) %>
-<%= link_to "Iruzkina ezabatu", '/comments/'+comment.id.to_s+'/destroy' %><br/>
 <% end %>
-<% end %><br/>
--------------------<br/>
+</div>
