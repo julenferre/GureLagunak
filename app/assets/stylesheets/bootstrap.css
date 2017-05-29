@@ -6774,3 +6774,7 @@ button.close {
   font-size: 14pt;
   border-radius: 25px;
 }
+
+.borobildu {
+    border-radius: 50%;
+}

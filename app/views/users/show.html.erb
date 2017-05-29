@@ -1,7 +1,11 @@
 <table>
 	<tr>
-		<td rowspan="2">
-			<%= image_tag(@user.profile_pic) %>
+		<td rowspan="2">		
+		<% if @user.profile_pic?%>          
+        <%= image_tag(@user.profile_pic) %>
+        <% else %>
+        <%= image_tag("nouser.gif")%>
+        <% end %>
 		</td>
 		<td>
 			<center>

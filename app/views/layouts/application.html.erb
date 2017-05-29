@@ -20,7 +20,11 @@
       </td>
       <td style="text-align: right">
         <% if logged_in? %>
-          <%= link_to image_tag(current_user.profile_pic, :width => 40, :height => 40), current_user %>
+          <% if current_user.profile_pic?%>          
+            <%= link_to image_tag(current_user.profile_pic, :width => 40, :height => 40, :class => 'borobildu'), current_user %>
+          <% else %>
+            <%= link_to image_tag("nouser.gif", :width => 40, :height => 40, :class => 'borobildu'), current_user %>
+          <% end %>
           <%= link_to current_user.nickname, current_user, :class =>'btn btn-default' %>
           <%= link_to "Log out", logout_path, :class => 'btn btn-danger', method: :delete %>
         <% else %>
