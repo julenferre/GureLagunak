@@ -2,7 +2,7 @@
 	<tr>
 		<td rowspan="2">		
 		<% if @user.profile_pic?%>          
-        <%= image_tag(@user.profile_pic) %>
+        <%= image_tag(@user.profile_pic, :style => "max-width:100%; height:auto") %>
         <% else %>
         <%= image_tag("nouser.gif")%>
         <% end %>

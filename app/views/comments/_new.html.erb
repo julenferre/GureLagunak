@@ -1,6 +1,6 @@
 <%= form_for(@comment, url: comment_path) do |f| %>
 
-	<%= f.text_area :text, :class => "col-xs-offset-2 col-xs-8" %>
+	<%= f.text_area :text, :class => "col-xs-offset-2 col-xs-8", :required => true%>
 	
 	<%= f.submit "Iruzkina sartu", :class => "col-xs-offset-2 col-xs-2" %>
 	

@@ -3,7 +3,7 @@
  - <%= VoteCommsController.gettotal(comment.id) %> pts
  - <span style="font-size: 10pt"><%= comment.created_at %></span>
  <% if logged_in? && (comment.user.id == current_user.id || current_user.admin == 1) %>
- - <%= link_to image_tag("trash-can-symbol-icon-504.png", style: 'height:3%;width:3%'), '/comments/'+comment.id.to_s+'/destroy' %>
+ - <%= link_to image_tag("trash-can-symbol-icon-504.png", style: 'height:10px;width:10px'), '/comments/'+comment.id.to_s+'/destroy' %>
 <% end %>
 <p style="font-size: 16pt; text-align: left"><%= comment.text %></p>
 <% if logged_in? %>

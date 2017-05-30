@@ -5,10 +5,10 @@
 	 <%= render 'shared/error_messages', object: @img %>
 
 	<%= f.label :title, "Izenburua" %><br/>
-	<%= f.text_field :title %> <br/>
+	<%= f.text_field :title, :required => true %> <br/>
 	<br/>
 	<%= f.label :img, "Irudia hautatu" %><br/>
-	<%= f.file_field :img %><br/>	
+	<%= f.file_field :img, :required => true %><br/>	
 	<br/>
 	<%= f.submit "Irudia igo" %>
 <% end %>
