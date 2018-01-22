@@ -1,9 +1,0 @@
-<%= flash[:success] %>
-<%= render @img %>
-<br/>
-<% if logged_in? %>
-<%= render '/vote_imgs/new' %>
-<br/><br/>
-<%= render '/comments/new' %>
-<% end %>
-<%= render @comments %>
